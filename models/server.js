@@ -29,7 +29,7 @@ class Server{
     }
     middlewares(){
         this.app.use(cors())
-        this.app.use (body-parser.json()) 
+        this.app.use(body-parser.json()) 
     }
 
 }
