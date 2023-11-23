@@ -25,12 +25,13 @@ class Server{
         this.app.use(this.usuarioPath, require('../routes/usuario'))
     }
 
-    async conectarDB(){
-        await dbConection()
-    }
+   
     middlewares(){
         this.app.use(cors())
         this.app.use(bodyParser.json()) 
+    }
+    async conectarDB(){
+        await dbConection()
     }
 
 }
