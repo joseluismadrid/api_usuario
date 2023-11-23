@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const parser =require ('body-parser')
+const bodyparser =require ('body-parser')
 const { dbConection } = require('../database/config')
 
 class Server{
@@ -29,7 +29,7 @@ class Server{
     }
     middlewares(){
         this.app.use(cors())
-        this.app.use(body-parser.json()) 
+        this.app.use(bodyparser.json()) 
     }
 
 }
