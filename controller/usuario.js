@@ -39,7 +39,7 @@ const putUsuario =async (req, res) => {
     
 }
 const deleteUsuario =async (req, res) => {
-    const {nombre,password,rol,estado}= req.query //desetructurar 
+    const {nombre,password,rol,estado}= req.body //desetructurar 
     let mensaje = 'Eliminacion Exitosa'
     try {
         const   usuarios = await usuario.findOneAndDelete({nombre:nombre},{password:password,rol:rol,estado:estado}) 
