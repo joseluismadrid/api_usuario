@@ -28,7 +28,7 @@ class Server{
         await dbConection()
     }
     middlewares(){
-        this.PaymentResponse.arguments(cors())
+        this.app.use(cors())
         this.app.use (body-parser.json()) 
     }
 
