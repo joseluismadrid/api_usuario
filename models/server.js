@@ -1,4 +1,6 @@
 const express = require('express')
+const cors = require('cors')
+const parser =require ('body-parser')
 const { dbConection } = require('../database/config')
 
 class Server{
@@ -7,6 +9,7 @@ class Server{
         this.port = process.env.PORT
         this.usuarioPath = '/usuario' //Ruta de la API
         this.routes()
+        this.middlewares()
         this.conectarDB()
     }
 
@@ -23,6 +26,10 @@ class Server{
 
     async conectarDB(){
         await dbConection()
+    }
+    middlewares(){
+        this.PaymentResponse.arguments(cors())
+        this.app.use (body-parser.json()) 
     }
 
 }

@@ -11,7 +11,7 @@ const getUsuario= async(req,res)=>{
 };
 
 const postUsuario = async(req,res)=>{
-    const datos= req.query//capturar datos de la postman
+    const datos= req.body//capturar datos de la postman
     let mensaje ='Inserción exitosa'
     try {
         const usuarios = new usuario(datos)
@@ -26,7 +26,7 @@ const postUsuario = async(req,res)=>{
     })
 }
 const putUsuario =async (req, res) => {
-    const {nombre,password,rol,estado}= req.query //desetructurar 
+    const {nombre,password,rol,estado}= req.body //desetructurar 
     let mensaje = 'Actualizacion Exitosa'
     try {
         const   usuarios = await usuario.findOneAndUpdate({nombre:nombre},{password:password,rol:rol,estado:estado}) 
