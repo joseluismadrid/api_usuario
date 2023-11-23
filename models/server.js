@@ -8,7 +8,7 @@ class Server{
     constructor(){
         this.app = express()
         this.port = process.env.PORT
-        this.usuarioPath = '/usuario' //Ruta de la API
+        this.usuarioPath = '/usuarios' //Ruta de la API
         this.routes()
         this.middlewares()
         this.conectarDB()
