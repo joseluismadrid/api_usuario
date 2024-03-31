@@ -26,10 +26,10 @@ const postUsuario = async(req,res)=>{
     })
 }
 const putUsuario =async (req, res) => {
-    const {nombre,password,rol,estado}= req.body //desetructurar 
+    const {nombre,password}= req.body //desetructurar 
     let mensaje = 'Actualizacion Exitosa'
     try {
-        const   usuarios = await usuario.findOneAndUpdate({nombre:nombre},{password:password,rol:rol,estado:estado}) 
+        const   usuarios = await usuario.findOneAndUpdate({nombre:nombre},{password:password}) 
     } catch (error) {
         mensaje = error;
     }
@@ -39,10 +39,10 @@ const putUsuario =async (req, res) => {
     
 }
 const deleteUsuario =async (req, res) => {
-    const {nombre,password,rol,estado}= req.body //desetructurar 
+    const {nombre,password}= req.body //desetructurar 
     let mensaje = 'Eliminacion Exitosa'
     try {
-        const   usuarios = await usuario.findOneAndDelete({nombre:nombre},{password:password,rol:rol,estado:estado}) 
+        const   usuarios = await usuario.findOneAndDelete({nombre:nombre},{password:password}) 
     } catch (error) {
         mensaje = error;
     }
