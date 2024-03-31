@@ -4,10 +4,10 @@ const UsuarioSchema=({
     nombre:{
         type:String,
         unique:true,
-        required:[true,'Elnombre de Usuario es requerido'],
+        required:[true,'El nombre de Usuario es requerido'],
     },
     password:{
-        type:String,
+        type:Number,
         required:[true,'El password es requerido'],
         min:[4,'El password debe contener mínimo 4 caracteres'],
         max:[10,'El password debe contener máximo 10 cararacteres']
