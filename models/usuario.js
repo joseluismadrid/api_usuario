@@ -2,8 +2,7 @@ const {Schema, model }=require('mongoose')
 
 const UsuarioSchema=({
     nombre:{
-        type:String,
-        unique:true,
+        type:String,     
         required:[true,'El nombre de Usuario es requerido'],
     },
     password:{
