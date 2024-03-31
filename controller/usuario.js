@@ -39,10 +39,10 @@ const putUsuario =async (req, res) => {
     
 }
 const deleteUsuario =async (req, res) => {
-    const {nombre,password}= req.body //desetructurar 
+    const {nombre}= req.body //desetructurar 
     let mensaje = 'Eliminacion Exitosa'
     try {
-        const   usuarios = await usuario.findOneAndDelete({nombre:nombre},{password:password}) 
+        const   usuarios = await usuario.findOneAndDelete({nombre}) 
     } catch (error) {
         mensaje = error;
     }
