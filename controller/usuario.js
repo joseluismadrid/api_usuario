@@ -29,7 +29,7 @@ const putUsuario =async (req, res) => {
     const {nombre,password}= req.body //desetructurar 
     let mensaje = 'Actualizacion Exitosa'
     try {
-        const   usuarios = await usuario.findOneAndUpdate({nombre:nombre},{password:password}) 
+        const   usuarios = await usuario.findOneAndUpdate({nombre:nombre},{password:password});
     } catch (error) {
         mensaje = error;
     }
